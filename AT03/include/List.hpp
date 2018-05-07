@@ -18,7 +18,7 @@ template <class T> class List {
 
 	    void Add(T Data);
 
-	    void Remove(unsigned int Index);
+	    void Remove(unsigned int index);
 
 	    void SearchFor(std::string Code);
 
@@ -99,30 +99,40 @@ template <class T> void List<T>::Add(T Data) {
 	 
 }
 
-template <class T> void List<T>::Remove(unsigned int Index) {
+template <class T> void List<T>::Remove(unsigned int index) {
 
-	if (Index != 1 && Index != Size) {
+	if (index != 1 && index != Size) {
 
-		Node<T>* Temp = Beginning;
+		if (index > 1 && index < Size) {
 
-		for (unsigned int i = 1; i < Index; i++) {
+			Node<T>* Temp = Beginning;
 
-			Temp = Temp->getNext();
+			for (unsigned int i = 1; i < index; i++) {
+
+				Temp = Temp->getNext();
+
+			}
+
+			Temp->getPrevious()->setNext(Temp->getNext());
+			Temp->getNext()->setPrevious(Temp->getPrevious());
+
+			std::cout << std::endl << "  " << Temp->getData().getName() << " removido da lista." << std::endl;
+
+			delete Temp;
+			Temp = nullptr;
+			Size--;
 
 		}
 
-		Temp->getPrevious()->setNext(Temp->getNext());
-		Temp->getNext()->setPrevious(Temp->getPrevious());
+		else {
 
-		std::cout << std::endl << "  " << Temp->getData().getName() << " removido da lista." << std::endl;
+			std::cout << std::endl << "  O indice fornecido e invalido." << std::endl;
 
-		delete Temp;
-		Temp = nullptr;
-		Size--;
+		}
 
 	}
 
-	else if (Index == 1 && Size > 1) {
+	else if (index == 1 && Size > 1) {
 
 		Node<T>* Temp = Beginning;
 
@@ -137,7 +147,7 @@ template <class T> void List<T>::Remove(unsigned int Index) {
 
 	}
 
-	else if (Index == Size && Size > 1) {
+	else if (index == Size && Size > 1) {
 
 		Node<T>* Temp = End;
 
