@@ -35,32 +35,32 @@ int main(int argc, char *argv[]) {
 
 					case 1:
 
-						Lista.Add(Smartphone());
+						Lista.Add(new Smartphone);
 						break;
 
 					case 2:
 
-						Lista.Add(Laptop());
+						Lista.Add(new Laptop);
 						break;
 
 					case 3:
 
-						Lista.Add(Desktop());
+						Lista.Add(new Desktop);
 						break;
 
 					case 4:
 
-						Lista.Add(Food());
+						Lista.Add(new Food);
 						break;
 
 					case 5:
 
-						Lista.Add(Snack());
+						Lista.Add(new Snack);
 						break;
 
 					case 6:
 
-						Lista.Add(Medicine());
+						Lista.Add(new Medicine);
 						break;
 
 					default:

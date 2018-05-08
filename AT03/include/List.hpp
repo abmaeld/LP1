@@ -16,9 +16,9 @@ template <class T> class List {
 
 	    ~List();
 
-	    void Add(T Data);
+	    void Add(T *Data);
 
-	    void Remove(unsigned int index);
+	    void Remove(unsigned int Index);
 
 	    void SearchFor(std::string Code);
 
@@ -61,7 +61,7 @@ template <class T> List<T>::~List() {
 
 }
 
-template <class T> void List<T>::Add(T Data) {
+template <class T> void List<T>::Add(T *Data) {
 
 	if (End == nullptr) {
 
@@ -69,7 +69,7 @@ template <class T> void List<T>::Add(T Data) {
 
 	    End->setPrevious(nullptr);
 	            
-	    End->setData(&Data);            
+	    End->setData(Data);            
 
 	    End->setNext(nullptr);
 
@@ -83,7 +83,7 @@ template <class T> void List<T>::Add(T Data) {
 
 	    Temp->setPrevious(End);
 	            
-	    Temp->setData(&Data);
+	    Temp->setData(Data);
 	            
 	    Temp->setNext(nullptr);
 
@@ -99,15 +99,15 @@ template <class T> void List<T>::Add(T Data) {
 	 
 }
 
-template <class T> void List<T>::Remove(unsigned int index) {
+template <class T> void List<T>::Remove(unsigned int Index) {
 
-	if (index != 1 && index != Size) {
+	if (Index != 1 && Index != Size) {
 
-		if (index > 1 && index < Size) {
+		if (Index > 1 && Index < Size) {
 
 			Node<T>* Temp = Beginning;
 
-			for (unsigned int i = 1; i < index; i++) {
+			for (unsigned int i = 1; i < Index; i++) {
 
 				Temp = Temp->getNext();
 
@@ -132,7 +132,7 @@ template <class T> void List<T>::Remove(unsigned int index) {
 
 	}
 
-	else if (index == 1 && Size > 1) {
+	else if (Index == 1 && Size > 1) {
 
 		Node<T>* Temp = Beginning;
 
@@ -147,7 +147,7 @@ template <class T> void List<T>::Remove(unsigned int index) {
 
 	}
 
-	else if (index == Size && Size > 1) {
+	else if (Index == Size && Size > 1) {
 
 		Node<T>* Temp = End;
 
