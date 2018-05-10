@@ -35,8 +35,8 @@ template <class T> Node<T>::Node() {
 
 template <class T> Node<T>::~Node() {
 
-	//delete Data;
-	//Data = nullptr;
+	delete Data;
+	Data = nullptr;
 
 }
 
