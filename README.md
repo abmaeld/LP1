@@ -1,4 +1,4 @@
-LPI - Linguagens de Programação I
+#LPI - Linguagens de Programação I
 
 	1. Atividade 01 em github.com/juliafsouzag/AT01-LPI - Learning Git (09/03)
 	2. Ativadade 02 em AT02 - Classesapo (15/03)
