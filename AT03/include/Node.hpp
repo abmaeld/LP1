@@ -14,6 +14,7 @@ template <class T> class Node {
 
 		void setData(T *data);
 		T getData();
+		T* getData_Addr();
 
 		void setNext(Node<T> *next);
 		Node<T>* getNext();
@@ -60,6 +61,12 @@ template <class T> void Node<T>::setData(T *data) {
 template <class T> T Node<T>::getData() {
 
 	return *Data;
+
+}
+
+template <class T> T* Node<T>::getData_Addr() {
+
+	return Data;
 
 }
 

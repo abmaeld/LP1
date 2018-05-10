@@ -31,6 +31,8 @@ class Product {
 	    void setCode(std::string code);
 	    std::string getCode();
 
+	    unsigned short Type;
+
 	private:
 		
 		std::string Code;
@@ -114,6 +116,8 @@ class Smartphone : public Durable {
 	    void setCamera(std::string camera);
 	    std::string getCamera();
 
+	    void print();
+
 	private:
 
 		std::string SoC;
@@ -155,6 +159,8 @@ class Laptop : public Durable {
 	    void setBattery(float battery);
 	    float getBattery();
 
+	    void print();
+
 	private:
 
 		std::string Cpu;
@@ -193,6 +199,8 @@ class Desktop : public Durable {
 	    void setPsu(short psu);
 	    short getPsu();
 
+	    void print();
+
 	private:
 
 		std::string Cpu;
@@ -217,6 +225,8 @@ class Food : public Nondurable {
 		void setWeight(float weight);
 		float getWeight();
 
+		void print();
+
 	private:
 
 		bool Transgenic;
@@ -233,6 +243,8 @@ class Snack : public Food {
 
 		void setFlavor(std::string flavor);
 		std::string getFlavor();
+
+		void print();
 
 	private:
 
@@ -252,6 +264,8 @@ class Medicine : public Nondurable {
 
 		void setPosology(std::string posology);
 		std::string getPosology();
+
+		void print();
 
 	private:
 

@@ -198,6 +198,8 @@ Smartphone::Smartphone() {
 	std::cout << "  Camera: "; std::string camera; 
 	std::getline(std::cin, camera); this->setCamera(camera);
 
+	Type = 1;
+
 }	
 
 Smartphone::~Smartphone() {
@@ -289,6 +291,27 @@ std::string Smartphone::getCamera() {
 
 }
 
+
+void Smartphone::print() {
+
+	std::cout << std::endl << "  Name: " << this->getName()  
+	<< std::endl << "  Description: " << this->getDescription()
+	<< std::endl << "  Brand: " << this->getBrand()
+	<< std::endl << "  Date: " << this->getDate()
+	<< std::endl << "  Price (in reais): " << this->getPrice()
+	<< std::endl << "  Code: " << this->getCode()
+	<< std::endl << "  Material: " << this->getMaterial()
+	<< std::endl << "  Durability (in years, 0 if not defined): " << this->getDurability() 
+	<< std::endl << "  SoC: " << this->getSoC()
+	<< std::endl << "  Random Access Memory (in gigabytes): " << this->getRandom_Access_Memory() 
+	<< std::endl << "  Storage Memory (in gigabytes): " << this->getStorage_Memory()
+	<< std::endl << "  Screen (in inches): " << this->getScreen()
+	<< std::endl << "  Resolution: " << this->getResolution()
+	<< std::endl << "  Battery (in mAh): " << this->getBattery() 
+	<< std::endl << "  Camera: " << this->getCamera() << std::endl;
+
+}
+
 Laptop::Laptop() {
 
 	std::cout << "  Cpu: "; std::string cpu; 
@@ -310,7 +333,9 @@ Laptop::Laptop() {
 	std::getline(std::cin, resolution); this->setResolution(resolution);
 
 	std::cout << "  Battery (in mAh): "; float battery; 
-	std::cin >> battery; std::getchar(); this->setBattery(battery); 
+	std::cin >> battery; std::getchar(); this->setBattery(battery);
+
+	Type = 2; 
 
 }
 
@@ -404,6 +429,26 @@ float Laptop::getBattery() {
 
 }
 
+void Laptop::print() {
+
+	std::cout << std::endl << "  Name: " << this->getName() 
+	<< std::endl << "  Description: " << this->getDescription()
+	<< std::endl << "  Brand: " << this->getBrand()
+	<< std::endl << "  Date: " << this->getDate()
+	<< std::endl << "  Price (in reais): " << this->getPrice()
+	<< std::endl << "  Code: " << this->getCode() 
+	<< std::endl << "  Material: " << this->getMaterial()
+	<< std::endl << "  Durability (in years, 0 if not defined): " << this->getDurability()
+	<< std::endl << "  Cpu:: " << this->getCpu() 
+	<< std::endl << "  Gpu: " << this->getGpu() 
+	<< std::endl << "  Random Access Memory (in gigabytes): " << this->getRandom_Access_Memory()
+	<< std::endl << "  Storage Memory (in gigabytes): " << this->getStorage_Memory()
+	<< std::endl << "  Screen (in inches): " << this->getScreen()
+	<< std::endl << "  Resolution: " << this->getResolution()
+	<< std::endl << "  Battery (in mAh): " << this->getBattery() << std::endl; 
+
+}
+
 Desktop::Desktop() {
 
 	std::cout << "  Cpu: "; std::string cpu; 
@@ -423,6 +468,8 @@ Desktop::Desktop() {
 
 	std::cout << "  Psu (in watts): "; short psu; 
 	std::cin >> psu; this->setPsu(psu); std::getchar();
+
+	Type = 3;
 
 }
 
@@ -503,6 +550,26 @@ short Desktop::getPsu() {
 
 }
 
+void Desktop::print() {
+
+	std::cout << std::endl << "  Name: " << this->getName() 
+	<< std::endl << "  Description: " << this->getDescription()
+	<< std::endl << "  Brand: " << this->getBrand()
+	<< std::endl << "  Date: " << this->getDate()
+	<< std::endl << "  Price (in reais): " << this->getPrice()
+	<< std::endl << "  Code: " << this->getCode()
+	<< std::endl << "  Material: " << this->getMaterial()
+	<< std::endl << "  Durability (in years, 0 if not defined): " << this->getDurability()
+	<< std::endl << "  Cpu:: " << this->getCpu() 
+	<< std::endl << "  Gpu: " << this->getGpu() 
+	<< std::endl << "  Motherboard: " << this->getMotherboard()
+	<< std::endl << "  Random Access Memory (in gigabytes): " << this->getRandom_Access_Memory()
+	<< std::endl << "  Storage Memory (in gigabytes): " << this->getStorage_Memory()
+	<< std::endl << "  Psu (in watts): " << this->getPsu() << std::endl;
+
+
+}
+
 Food::Food() {
 
 	std::cout << "  Is transgenic (y/n): "; char transgenic; 
@@ -510,6 +577,8 @@ Food::Food() {
 
 	std::cout << "  Weight (in kilograms): "; float weight; 
 	std::cin >> weight; std::getchar(); this->setWeight(weight);
+
+	Type = 4;
 
 }
 
@@ -558,10 +627,28 @@ float Food::getWeight() {
 
 }
 
+void Food::print() {
+
+	std::cout << std::endl << "  Name: " << this->getName() 
+	<< std::endl << "  Description: " << this->getDescription()
+	<< std::endl << "  Brand: " << this->getBrand()
+	<< std::endl << "  Date: " << this->getDate()
+	<< std::endl << "  Price (in reais): " << this->getPrice()
+	<< std::endl << "  Code: " << this->getCode()
+	<< std::endl << "  Expiration Date: " << this->getExpiration_Date()
+	<< std::endl << "  Genre: " << this->getGenre() 
+	<< std::endl << "  Transgenic:: " << this->getTransgenic() 
+	<< std::endl << "  Weight: " << this->getWeight() << std::endl; 
+
+
+}
+
 Snack::Snack() {
 
 	std::cout << "  Flavor: "; std::string flavor; 
 	std::getline(std::cin, flavor); this->setFlavor(flavor);
+
+	Type = 5;
 
 }
 
@@ -583,6 +670,23 @@ std::string Snack::getFlavor() {
 
 }
 
+void Snack::print() {
+
+	std::cout << std::endl << "  Name: " << this->getName() 
+	<< std::endl << "  Description: " << this->getDescription()
+	<< std::endl << "  Brand: " << this->getBrand()
+	<< std::endl << "  Date: " << this->getDate() 
+	<< std::endl << "  Price (in reais): " << this->getPrice()
+	<< std::endl << "  Code: " << this->getCode()
+	<< std::endl << "  Expiration Date: " << this->getExpiration_Date()
+	<< std::endl << "  Genre: " << this->getGenre()
+	<< std::endl << "  Transgenic:: " << this->getTransgenic() 
+	<< std::endl << "  Weight: " << this->getWeight()
+	<< std::endl << "  Flavor: " << this->getFlavor() << std::endl;
+
+
+}
+
 Medicine::Medicine() {
 
 	std::cout << "  Composition: "; std::string composition; 
@@ -590,6 +694,8 @@ Medicine::Medicine() {
 
 	std::cout << "  Posology: "; std::string posology; 
 	std::getline(std::cin, posology); this->setPosology(posology);
+
+	Type = 6;
 
 }
 
@@ -621,4 +727,21 @@ std::string Medicine::getPosology() {
 	return Posology;
 
 }
+
+void Medicine::print() {
+
+	std::cout << std::endl << "  Name: " << this->getName() 
+	<< std::endl << "  Description: " << this->getDescription()
+	<< std::endl << "  Brand: " << this->getBrand()
+	<< std::endl << "  Date: " << this->getDate()
+	<< std::endl << "  Price (in reais): " << this->getPrice()
+	<< std::endl << "  Code: " << this->getCode()
+	<< std::endl << "  Expiration Date: " << this->getExpiration_Date()
+	<< std::endl << "  Genre: " << this->getGenre()
+	<< std::endl << "  Composition:: " << this->getComposition()
+	<< std::endl << "  Posology: " << this->getPosology() << std::endl;
+
+}
+
+
 

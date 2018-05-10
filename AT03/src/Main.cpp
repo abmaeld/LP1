@@ -5,15 +5,16 @@ int main(int argc, char *argv[]) {
 
 	List<Product> Lista;
 	
-	unsigned short int cmd = 0; while(cmd != 6) {
+	unsigned short int cmd = 0; while(cmd != 7) {
 
 		std::cout << std::endl
 		  << "  1: Adicionar produto a lista;" << std::endl
 		  << "  2: Remover produto da lista;" << std::endl
 		  << "  3: Procurar produto na lista;" << std::endl
-		  << "  4: Imprimir lista;" << std::endl
-		  << "  5: Procurar produto mais caro da lista;" << std::endl
-		  << "  6: Sair do sistema." << std::endl;
+		  << "  4: Obter informacoes de produto da lista;" << std::endl
+		  << "  5: Imprimir lista;" << std::endl
+		  << "  6: Procurar produto mais caro da lista;" << std::endl
+		  << "  7: Sair do sistema." << std::endl;
 
 		std::cout << std::endl << "  Acao: "; std::cin >> cmd;
 
@@ -94,13 +95,22 @@ int main(int argc, char *argv[]) {
 
 			case 4: {
 
+				std::cout << std::endl << "  Obter informacoes de produto da lista (forneca o indice): ";
+				int Index; std::cin >> Index; Lista.getInfo(Index); 
+				
+			}
+
+			break;
+
+			case 5: {
+
 				Lista.Print();
 
 			}
 
 			break;
 
-			case 5: {
+			case 6: {
 
 				Lista.Most_Expensive();
 
@@ -108,7 +118,7 @@ int main(int argc, char *argv[]) {
 
 			break;
 
-			case 6: {
+			case 7: {
 
 				std::cout << std::endl << "  The end has no end - The Strokes." << std::endl << std::endl;
 

@@ -7,6 +7,8 @@
 #include <string>
 
 #include "../include/Node.hpp"
+#include "../include/Product.hpp"
+
 
 template <class T> class List {
 
@@ -21,6 +23,8 @@ template <class T> class List {
 	    void Remove(unsigned int Index);
 
 	    void SearchFor(std::string Code);
+
+	    void getInfo(unsigned int Index);
 
 	    void Most_Expensive();
 
@@ -170,6 +174,67 @@ template <class T> void List<T>::Remove(unsigned int Index) {
 		Beginning = nullptr;
 		End = Beginning;
 		Size--;
+
+	}
+	 
+}
+
+template <class T> void List<T>::getInfo(unsigned int Index) {
+
+	
+	Node<T>* Temp = Beginning;
+
+	for (unsigned int i = 1; i < Index; i++) {
+
+		Temp = Temp->getNext();
+
+	}
+
+	if (Temp->getData().Type == 1) {
+
+		Smartphone *Aux = (Smartphone*) Temp->getData_Addr();
+		Aux->print();
+
+	}
+
+	else if (Temp->getData().Type == 2) {
+
+		Laptop *Aux = (Laptop*) Temp->getData_Addr();
+		Aux->print();
+
+	}
+
+	else if (Temp->getData().Type == 3) {
+
+		Desktop *Aux = (Desktop*) Temp->getData_Addr();
+		Aux->print();
+
+	}
+
+	else if (Temp->getData().Type == 4) {
+
+		Food *Aux = (Food*) Temp->getData_Addr();
+		Aux->print();
+
+	}
+
+	else if (Temp->getData().Type == 5) {
+
+		Snack *Aux = (Snack*) Temp->getData_Addr();
+		Aux->print();
+
+	}
+
+	else if (Temp->getData().Type == 6) {
+
+		Medicine *Aux = (Medicine*) Temp->getData_Addr();
+		Aux->print();
+
+	}
+
+	else {
+
+		std::cout << std::endl << "  Esse elemento nao nao tem informacoes a serem impressas." << std::endl;
 
 	}
 	 
