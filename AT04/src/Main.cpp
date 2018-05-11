@@ -5,13 +5,14 @@ int main(int argc, char *argv[]) {
 
 	Empresa IMD;
 
-	unsigned short comando = 0;	while(comando != 5) {
+	unsigned short comando = 0;	while(comando != 6) {
 
 		std::cout << std::endl << "  1: Adicionar Funcionarix;"
 				  << std::endl << "  2: Remover Funcionarix;"
 				  << std::endl << "  3: Reajustar Salario;"
 				  << std::endl << "  4: Listar Funcionarixs;"
-				  << std::endl << "  5: Sair;" << std::endl;
+				  << std::endl << "  5: Listar Funcionarixs em treinamento;"
+				  << std::endl << "  6: Sair;" << std::endl;
 
 		std::cout << std::endl << "  Acao: "; std::cin >> comando;
 
@@ -24,11 +25,11 @@ int main(int argc, char *argv[]) {
 					      << std::endl << "    2: Gerente;"
 					      << std::endl << "    3: Secretarix;" << std::endl;
 
-				unsigned short tipo = 0;
+				unsigned short funcao = 0;
 
-				std::cout << std::endl << "    Tipo: "; std::cin >> tipo;
+				std::cout << std::endl << "    Funcao: "; std::cin >> funcao;
 
-				switch(tipo) {
+				switch(funcao) {
 
 					case 1: {
 
@@ -81,8 +82,63 @@ int main(int argc, char *argv[]) {
 
 			case 3: {
 
-				std::cout << std::endl << "  Reajustando Salario:" << std::endl 
-						  << std::endl << "    Forneca a taxa de reajuste: "; float reajuste;
+				std::cout << std::endl << "  Reajustando Salario:" << std::endl
+						  << std::endl << "  Forneca a taxa de reajuste: "; 
+
+				float taxa; std::cin >> taxa;  
+
+				std::cout << std::endl << "    1: Operarix;"
+					      << std::endl << "    2: Gerente;"
+					      << std::endl << "    3: Secretarix;"
+					      << std::endl << "    4: Todas Funcoes;" << std::endl;
+
+				std::cout << std::endl << "    Funcao: "; 
+
+				unsigned short funcao; std::cin >> funcao;
+
+				switch(funcao) {
+
+					case 1: {
+
+						IMD.Lista.Reajustar_Operarix(taxa);
+
+					}
+
+					break;
+
+					case 2: {
+
+						IMD.Lista.Reajustar_Gerente(taxa);
+
+					}
+
+					break;
+
+					case 3: {
+
+						IMD.Lista.Reajustar_Secretarix(taxa);
+
+					}
+
+					break;
+
+					case 4: {
+
+						IMD.Lista.Reajustar(taxa);
+
+					}
+
+					break;
+
+					default: {
+
+						std::cout << std::endl << "    Tipo nao reconhecido de funcionarix." << std::endl;
+
+					}
+
+					break;
+
+				}
 
 			}
 			
@@ -99,10 +155,19 @@ int main(int argc, char *argv[]) {
 
 			case 5: {
 
-				std::cout << std::endl << "  Faliu." << std::endl;
+				std::cout << std::endl << "  Listando Funcionarixs em treinamento: " << std::endl;
+				IMD.Lista.Print_Treinamento();
 
 			}
 			
+			break;
+
+			case 6: {
+
+				std::cout << std::endl << "  Faliu." << std::endl;
+
+			}
+
 			break;
 
 			default: {

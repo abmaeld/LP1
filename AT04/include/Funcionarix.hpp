@@ -30,6 +30,8 @@ class Funcionarix {
 		void setFunction(unsigned short function);
 		unsigned short getFunction();
 
+		unsigned short getTotal_Days_Worked();
+
 		//friend std::ostream& operator<<(std::ostream& os, Funcionarix& o); 
 
 	private:
@@ -51,7 +53,7 @@ Funcionarix::Funcionarix() {
 	std::getchar(); std::string name; std::getline(std::cin, name); this->setName(name);
 
 	std::cout << "  Informe o salario de " << this->getName() << ": ";
-	float salary; std::getchar(); std::cin >> salary; this->setSalary(salary);
+	float salary; std::cin >> salary; this->setSalary(salary);
 
 	std::cout << "  Informe quantos anos de servico tem " << this->getName() << ": ";
 	unsigned short years_worked; std::cin >> years_worked; this->setYears_Worked(years_worked);
@@ -147,5 +149,11 @@ unsigned short Funcionarix::getFunction() {
     return os << "";
 
 } */
+
+unsigned short Funcionarix::getTotal_Days_Worked() {
+
+	return this->getYears_Worked() * 365 + this->getMonths_Worked() * 30 + this->getDays_Worked();
+
+}
 
 #endif

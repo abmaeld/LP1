@@ -27,6 +27,16 @@ template <class T> class List {
 
 	    void Print();
 
+	    void Print_Treinamento();
+
+	    void Reajustar(float taxa);
+
+	    void Reajustar_Operarix(float taxa);
+
+	    void Reajustar_Gerente(float taxa);
+
+	    void Reajustar_Secretarix(float taxa);
+
 	    unsigned short getSize();
 
 	private:
@@ -293,6 +303,180 @@ template <class T> void List<T>::Print() {
 
 				// Invalid Function
 
+			}
+
+			Temp = Temp->getNext();
+
+		}
+
+	}
+
+	else {
+
+		std::cerr << std::endl << "    Empty List;" << std::endl;
+
+	}
+
+}
+
+template <class T> void List<T>::Print_Treinamento() {
+
+	if (Ending != nullptr) {
+
+		Node<T>* Temp = Beginning; int index = 0;
+
+		while (Temp != nullptr) {
+
+			index++;
+
+			if (Temp->getData_Address()->getTotal_Days_Worked() < 90) {
+
+				std::cout << std::endl << "    " << index << ": ";
+
+				if (Temp->getData_Address()->getFunction() == 1) {
+
+					Operarix* Aux = (Operarix*) Temp->getData_Address();
+
+					std::cout << *Aux << std::endl;
+					
+					Aux = nullptr;
+				
+				}
+
+				else if (Temp->getData_Address()->getFunction() == 2) {
+
+					Gerente* Aux = (Gerente*) Temp->getData_Address();
+
+					std::cout << *Aux << std::endl;
+					
+					Aux = nullptr;
+
+				}
+
+				else if (Temp->getData_Address()->getFunction() == 3) {
+
+					Secretarix* Aux = (Secretarix*) Temp->getData_Address();
+
+					std::cout << *Aux << std::endl;
+					
+					Aux = nullptr;
+
+				}
+
+				else {
+
+					// Invalid Function
+
+				}
+
+			}
+
+			Temp = Temp->getNext();
+
+		}
+
+	}
+
+	else {
+
+		std::cerr << std::endl << "    Empty List;" << std::endl;
+
+	}
+
+}
+
+template <class T> void List<T>::Reajustar(float taxa) {
+
+	if (Ending != nullptr) {
+
+		Node<T>* Temp = Beginning; int index = 0;
+
+		while (Temp != nullptr) {
+
+			Temp->getData_Address()->setSalary(Temp->getData_Address()->getSalary() * taxa);
+
+			Temp = Temp->getNext();
+
+		}
+
+	}
+
+	else {
+
+		std::cerr << std::endl << "    Empty List;" << std::endl;
+
+	}
+
+}
+
+template <class T> void List<T>::Reajustar_Operarix(float taxa) {
+
+	if (Ending != nullptr) {
+
+		Node<T>* Temp = Beginning; int index = 0;
+
+		while (Temp != nullptr) {
+
+			if (Temp->getData_Address()->getFunction() == 1) {
+
+				Temp->getData_Address()->setSalary(Temp->getData_Address()->getSalary() * taxa);
+			
+			}
+
+			Temp = Temp->getNext();
+
+		}
+
+	}
+
+	else {
+
+		std::cerr << std::endl << "    Empty List;" << std::endl;
+
+	}
+
+}
+
+template <class T> void List<T>::Reajustar_Gerente(float taxa) {
+
+	if (Ending != nullptr) {
+
+		Node<T>* Temp = Beginning; int index = 0;
+
+		while (Temp != nullptr) {
+
+			if (Temp->getData_Address()->getFunction() == 2) {
+
+				Temp->getData_Address()->setSalary(Temp->getData_Address()->getSalary() * taxa);
+			
+			}
+
+			Temp = Temp->getNext();
+
+		}
+
+	}
+
+	else {
+
+		std::cerr << std::endl << "    Empty List;" << std::endl;
+
+	}
+
+}
+
+template <class T> void List<T>::Reajustar_Secretarix(float taxa) {
+
+	if (Ending != nullptr) {
+
+		Node<T>* Temp = Beginning; int index = 0;
+
+		while (Temp != nullptr) {
+
+			if (Temp->getData_Address()->getFunction() == 3) {
+
+				Temp->getData_Address()->setSalary(Temp->getData_Address()->getSalary() * taxa);
+			
 			}
 
 			Temp = Temp->getNext();
