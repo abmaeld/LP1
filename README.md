@@ -5,3 +5,4 @@
 	3. Prova 01 em PR01 - Batalha de Monstros (10/04)
 	4. Atividade 03 em AT03 - Deposito de Produtos (01/05)
 	5. Atividade 04 em AT04 - Gerenciamento de Funcionários (10/05)
+	6. Prova 02 em PR02 - Acervo de Midia (15/05)
