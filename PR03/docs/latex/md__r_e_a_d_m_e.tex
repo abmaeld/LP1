@@ -1,0 +1,54 @@
+\subsection*{Aluno}
+
+Abmael Dantas Gomes
+
+\subsection*{Como compilar o projeto}
+
+\$ make
+
+\subsection*{Como executar o projeto}
+
+\$ ./bin/\+Sapo++
+
+\subsection*{Especificação do projeto}
+
+
+\begin{DoxyEnumerate}
+\item Leitura de informações para instanciar objetos da classe \mbox{\hyperlink{class_sapo}{Sapo}} em arquivo está em \mbox{\hyperlink{_arquivo_8cpp}{Arquivo.\+cpp}} (linha 41) em read\+Sapos();
+\item Leitura de informações para instanciar objetos da classe \mbox{\hyperlink{class_pista}{Pista}} em arquivo está em \mbox{\hyperlink{_arquivo_8cpp}{Arquivo.\+cpp}} (linha 4) em read\+Pistas();
+\item A interface está em \mbox{\hyperlink{_interface_8hpp}{Interface.\+hpp}} / Interface.\+cpp, tendo o menu e alguns fragmentos da interface que foram portados para estes arquivos;
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item a) Ver\+\_\+\+Sapos() em \mbox{\hyperlink{_main_8cpp}{Main.\+cpp}} (linha 14);
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item b) Ver\+\_\+\+Pistas() em \mbox{\hyperlink{_main_8cpp}{Main.\+cpp}} (34);
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item c) A função para de fato iniciar a corrida está definida em \mbox{\hyperlink{_corrida_8cpp}{Corrida.\+cpp}} (linha 90), porém algumas configurações (como quais sapos irão competir nessa corrida ou qual pista será corrida) são feitas em \mbox{\hyperlink{_main_8cpp}{Main.\+cpp}} (linha 99);
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item d) A ciração de sapos é iniciada em \mbox{\hyperlink{_main_8cpp}{Main.\+cpp}} (linha 67) onde é chamado o construtor da classe (\mbox{\hyperlink{_sapo_8cpp}{Sapo.\+cpp}} \mbox{[}linha 29\mbox{]}) para instanciar um objeto;
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item e) A ciração de pistas é iniciada em \mbox{\hyperlink{_main_8cpp}{Main.\+cpp}} (linha 76) onde é chamado o construtor da classe (\mbox{\hyperlink{_pista_8cpp}{Pista.\+cpp}} \mbox{[}linha 11\mbox{]}) para instanciar um objeto;
+\item a) As configurações (como quais sapos irão competir nessa corrida ou qual pista será corrida) são feitas em \mbox{\hyperlink{_main_8cpp}{Main.\+cpp}} (linha 99);
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item b) Os sapos que irão competir são mostrados numa tela limpa que inicia com o nome da corrida em \mbox{\hyperlink{_main_8cpp}{Main.\+cpp}} (linha 183);
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item c) O programa aguarda a interação do usuário para começar a corrida;
+\item a) A mecaninca de \char`\"{}turnos\char`\"{} está definida em \mbox{\hyperlink{_corrida_8cpp}{Corrida.\+cpp}} (linha 90) e permite que cada sapo pule somente uma vez e cada pulo é sucedido pelo pulo do próximo sapo. A cada pulo é impresso na tela qual sapo pulou, quantos metros o pulo teve, a nova posição do sapo e a quantidade de pulos naquela corrida que o sapo já deu;
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item b) A verificação de quais sapos já cruzaram a linha de chegada da corrida é feita em \mbox{\hyperlink{_corrida_8cpp}{Corrida.\+cpp}} (linha 102), fazendo assim com que os sapos que já terminaram a corrida não pulem nem imprimam mais informações na tela;
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item c) A condição em \mbox{\hyperlink{_corrida_8cpp}{Corrida.\+cpp}} (linha 118) atualiza caso o sapo da vez tenha chegado ao fim da corrida um contador que indicará se todos os competidores já chegaram ao término da corrida. Liberando a continuação da execução do programa que mostra o Rank dos sapos em ordem de chegada fornecendo informações como sua última posição e o número de pulos.
+\item A escrita do arquivo é feita logo após a criação de qualquer sapo ou pista (\mbox{\hyperlink{_main_8cpp}{Main.\+cpp}} \mbox{[}linha 68 e linha 77\mbox{]}) e ao término de quaquer corrida \mbox{\hyperlink{_main_8cpp}{Main.\+cpp}} (linha 191) com chamadas das funções \char`\"{}write\+Sapos\char`\"{} e \char`\"{}write\+Pistas\char`\"{} definidas em \mbox{\hyperlink{_arquivo_8cpp}{Arquivo.\+cpp}} (linha 104 e linha 78, respectivamente).
+\end{DoxyEnumerate}
+
+Os arquivos do doxygen estão em /docs/html.
+
+\subsubsection*{\href{https://github.com/abmaeld/LPI/tree/master/PR03}{\tt Link para o projeto no Github no meu repositório da disciplina}}
